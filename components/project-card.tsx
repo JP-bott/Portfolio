@@ -33,6 +33,7 @@ export default function ProjectCard({
   containerClassName,
   revealDelay = 0,
 }: Props) {
+  const isExternal = !!href && /^https?:\/\//i.test(href)
   return (
     <article className={cn("group relative", containerClassName)}>
       <RevealOnView
@@ -79,10 +80,12 @@ export default function ProjectCard({
               </div>
               <Link
                 href={href}
+                target={isExternal ? "_blank" : undefined}
+                rel={isExternal ? "noopener noreferrer" : undefined}
                 className="inline-flex items-center gap-2 rounded-full bg-white/10 px-3 py-2 text-sm font-medium backdrop-blur transition-colors hover:bg-white/20 self-start sm:self-auto"
-                aria-label={`Open case study: ${title}`}
+                aria-label={`View live demo: ${title}`}
               >
-                Case study
+                View Live Demo
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

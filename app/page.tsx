@@ -1,7 +1,7 @@
 "use client"
 
 import Link from "next/link"
-import { useState } from "react"
+// removed useState (ContactButtons now uses direct links)
 import { ArrowRight, Linkedin, Mail, Github } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
@@ -72,6 +72,37 @@ export default function Page() {
       priority: false,
       gradientFrom: "#0b132b",
       gradientTo: "#10b981",
+    },
+    // Additional projects added from public/images/projects-img
+    {
+      title: "AWS Exam Reviewer",
+      subtitle: "Practice questions & flashcards",
+      imageSrc: "/images/projects-img/AWS-Exam-Reviewer.png",
+      tags: ["JavaScript", "CI/CD", "GitHub Actions", "Vercel"],
+      href: "https://aws-exam-reviewer.vercel.app/",
+      priority: false,
+      gradientFrom: "#07132a",
+      gradientTo: "#ff9900",
+    },
+    {
+      title: "NoteApp",
+      subtitle: "Cloud note app using Flask and DynamoDB.",
+      imageSrc: "/images/projects-img/NoteApp.png",
+      tags: ["DynamoDB", "Python Flask", "Boto3"],
+      href: "#project-8",
+      priority: false,
+      gradientFrom: "#0f172a",
+      gradientTo: "#7c3aed",
+    },
+    {
+      title: "WeatherApp",
+      subtitle: "Clean forecasts with OpenWeather API with CI/CD using GitHub Actions and Vercel",
+      imageSrc: "/images/projects-img/WeatherApp.png",
+      tags: ["API", "CI/CD", "NodeJS", "Express"],
+      href: "https://ci-cd-weather.vercel.app/",
+      priority: false,
+      gradientFrom: "#021124",
+      gradientTo: "#06b6d4",
     },
   ]
 
@@ -152,37 +183,26 @@ export default function Page() {
 }
 
 function ContactButtons() {
-  const [copied, setCopied] = useState(false)
-  const email = "your.email@example.com"
-
-  async function handleCopyEmail() {
-    try {
-      await navigator.clipboard.writeText(email)
-      setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
-    } catch {
-      // ignore
-    }
-  }
+  const email = "cout.johnpaul.torres@gmail.com"
 
   return (
     <div className="flex flex-wrap items-center gap-3">
       <Button asChild size="sm" className="rounded-full bg-gradient-to-r from-indigo-600 to-violet-500 hover:scale-[1.02] transition-transform">
-        <Link href="https://www.linkedin.com/in/your-linkedin" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+        <Link href="https://www.linkedin.com/in/john-paul-torres-123746372/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
           <Linkedin className="h-4 w-4 text-white/90" />
           <span className="text-sm font-medium">LinkedIn</span>
         </Link>
       </Button>
 
-      <Button onClick={handleCopyEmail} size="sm" className="rounded-full bg-gradient-to-r from-indigo-600 to-violet-500 hover:scale-[1.02] transition-transform">
-        <div className="flex items-center gap-2 text-white">
+      <Button asChild size="sm" className="rounded-full bg-gradient-to-r from-indigo-600 to-violet-500 hover:scale-[1.02] transition-transform">
+        <Link href={`mailto:${email}`} className="flex items-center gap-2 text-white">
           <Mail className="h-4 w-4 text-white/90" />
-          <span className="text-sm font-medium">{copied ? 'Copied!' : 'Email'}</span>
-        </div>
+          <span className="text-sm font-medium">Email</span>
+        </Link>
       </Button>
 
       <Button asChild size="sm" className="rounded-full bg-gradient-to-r from-indigo-600 to-violet-500 hover:scale-[1.02] transition-transform">
-        <Link href="https://github.com/your-username" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white">
+        <Link href="https://github.com/JP-bott" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-white">
           <Github className="h-4 w-4 text-white/90" />
           <span className="text-sm font-medium">GitHub</span>
         </Link>
