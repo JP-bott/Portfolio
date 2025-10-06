@@ -10,7 +10,6 @@ import DotGridShader from "@/components/DotGridShader"
 import ProjectCard from "@/components/project-card"
 import AnimatedHeading from "@/components/animated-heading"
 import RevealOnView from "@/components/reveal-on-view"
-
 export default function Page() {
   const projects = [
     {
@@ -111,56 +110,76 @@ export default function Page() {
       {/* HERO: full-viewport row. Left is sticky; right scrolls internally. */}
       <section className="px-4 pt-4 pb-16 lg:pb-4">
         <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-[420px_1fr]">
-          {/* LEFT: sticky and full height, no cut off */}
-          <aside className="lg:sticky lg:top-4 lg:h-[calc(100svh-2rem)]">
-            <RevealOnView
-              as="div"
-              intensity="hero"
-              className="relative flex h-full flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/60 p-6 sm:p-8"
-              staggerChildren
-            >
-              {/* Texture background */}
-              <div className="pointer-events-none absolute inset-0 opacity-5 mix-blend-soft-light">
-                <DotGridShader />
+          {/* LEFT: sticky and full height, now split into two stacked containers */}
+          <aside className="lg:sticky lg:top-4 lg:h-[calc(100svh-3rem)]">
+            <div className="grid h-full min-h-0 grid-rows-[3fr_1fr] gap-4">
+              {/* Top hero card (3fr of the available space) */}
+              <div className="min-h-0">
+                <RevealOnView
+                  as="div"
+                  intensity="hero"
+                  className="relative flex h-full min-h-0 flex-col justify-between overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/60 p-6 sm:p-8"
+                  staggerChildren
+                >
+                  {/* Texture background */}
+                  <div className="pointer-events-none absolute inset-0 opacity-5 mix-blend-soft-light">
+                    <DotGridShader />
+                  </div>
+                  <div>
+                    {/* Wordmark */}
+                    <div className="mb-8 flex items-center gap-2">
+                      <div className="text-2xl font-extrabold tracking-tight">John Paul</div>
+                      <div className="h-2 w-2 rounded-full bg-white/60" aria-hidden="true" />
+                    </div>
+
+                    {/* Headline with intro blur effect */}
+                    <AnimatedHeading
+                      className="text-[2.375rem] font-black leading-[1.05] tracking-tight sm:text-4xl"
+                      lines={["I explore cloud technologies to create simple and useful systems."]}
+                    />
+
+                    {/* CTAs */}
+                    <div className="mt-6 flex flex-wrap items-center gap-3">
+                      <Button asChild size="lg" className="rounded-full">
+                        <Link href="mailto:johnpaul@portfolio.dev">
+                          Hire me
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                      <Button asChild size="lg" className="rounded-full">
+                        <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                          View Resume
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
+
+                    {/* Contact buttons */}
+                    <div className="mt-10">
+                      <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">Get in touch</p>
+                      <ContactButtons />
+                    </div>
+                  </div>
+                </RevealOnView>
               </div>
-              <div>
-                {/* Wordmark */}
-                <div className="mb-8 flex items-center gap-2">
-                  <div className="text-2xl font-extrabold tracking-tight">John Paul</div>
-                  <div className="h-2 w-2 rounded-full bg-white/60" aria-hidden="true" />
-                </div>
 
-                {/* Headline with intro blur effect */}
-                <AnimatedHeading
-                  className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl"
-                  lines={["I explore cloud technologies to create simple and useful systems."]}
-                />
-
-                
-
-                {/* CTAs */}
-                <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <Button asChild size="lg" className="rounded-full">
-                    <Link href="mailto:johnpaul@portfolio.dev">
-                      Hire me
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                  <Button asChild size="lg" className="rounded-full">
-                    <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center">
-                      View Resume
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
-
-                {/* Contact buttons */}
-                <div className="mt-10">
-                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">Get in touch</p>
-                  <ContactButtons />
-                </div>
+              {/* Bottom container (1fr of the available space) */}
+              <div className="min-h-0">
+                <RevealOnView
+                  as="div"
+                  className="relative h-full min-h-0 overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/60 p-6 sm:p-8"
+                >
+                  <div className="h-full flex flex-col justify-center">
+                    <h2 className="text-sm font-semibold tracking-widest text-white/50 mb-2">
+                      Additional
+                    </h2>
+                    <p className="text-white/80 text-base">
+                      Place another container here (e.g., skills, about, or links).
+                    </p>
+                  </div>
+                </RevealOnView>
               </div>
-            </RevealOnView>
+            </div>
           </aside>
 
           {/* RIGHT: simplified, no internal card or horizontal carousel */}
