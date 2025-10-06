@@ -1,30 +1,60 @@
-# Portfolio template design
+# Portfolio
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+A personal portfolio built with Next.js (App Router). This repo contains the source for the static portfolio website and assets.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/lenxisms-projects/v0-portfolio-template-design)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/0INS7N2xMca)
+## Quick start
 
-## Overview
+Requirements:
+- Node.js 18+ (or the version required by your Next.js setup)
+- pnpm (recommended) or npm/yarn
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+Install dependencies:
+
+```bash
+pnpm install
+```
+
+Run the development server:
+
+```bash
+pnpm dev
+```
+
+Build for production:
+
+```bash
+pnpm build
+pnpm start
+```
+
+## Project structure
+
+- `app/` — Next.js App Router pages and global layout
+- `components/` — React components used across the site
+- `public/` — static assets (images, icons)
+- `styles/` — global and component styles
+- `lib/`, `hooks/`, `ui/` — helpers, hooks, and UI primitives
 
 ## Deployment
 
-Your project is live at:
+This project is deployed to Vercel at:
 
-**[https://vercel.com/lenxisms-projects/v0-portfolio-template-design](https://vercel.com/lenxisms-projects/v0-portfolio-template-design)**
+https://jp-torres-portfolio.vercel.app/
 
-## Build your app
+To redeploy or connect this repository in Vercel:
+1. Add the repository in the Vercel dashboard.
+2. Confirm the Next.js framework preset and environment settings.
 
-Continue building your app on:
+You can also deploy to any platform that supports Next.js builds.
 
-**[https://v0.dev/chat/projects/0INS7N2xMca](https://v0.dev/chat/projects/0INS7N2xMca)**
+## Contributing
 
-## How It Works
+Small changes are welcome. For larger changes, open an issue or a pull request with a clear description of what you'd like to change.
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+## License
+
+This project is available under the MIT License.
+
+## Contact
+
+Repository: https://github.com/JP-bott/Portfolio
