@@ -9,12 +9,10 @@ const skills = [
   { name: "Next.js", icon: "fas fa-bolt" },
   { name: "Node.js", icon: "fab fa-node-js" },
   { name: "AWS", icon: "fab fa-aws" },
-  { name: "Docker", icon: "fab fa-docker" },
-  { name: "HTML", icon: "fab fa-html5" },
-  { name: "CSS", icon: "fab fa-css3-alt" },
-  { name: "Git", icon: "fab fa-git-alt" },
   { name: "Python", icon: "fab fa-python" },
   { name: "GitHub", icon: "fab fa-github" },
+  { name: "Linux", icon: "fab fa-linux" },
+  { name: "Virtualization", icon: "fas fa-server" },
 ]
 
 export default function SkillsCarousel() {
