@@ -146,6 +146,12 @@ export default function Page() {
                       <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
+                  <Button asChild size="lg" className="rounded-full">
+                    <Link href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                      View Resume
+                      <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
                 </div>
 
                 {/* Contact buttons */}
