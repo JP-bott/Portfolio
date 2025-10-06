@@ -3,7 +3,7 @@
 
 Live demo: https://jp-torres-portfolio.vercel.app/
 
-A personal portfolio website for JP Torres showcasing projects, skills and contact information.
+A personal portfolio website for John Paul Torres showcasing projects, skills and contact information.
 
 [![Website Status](https://img.shields.io/badge/status-live-brightgreen.svg)](https://jp-torres-portfolio.vercel.app/)
 [![Deployed to Vercel](https://img.shields.io/badge/deploy-vercel-black.svg)](https://vercel.com)
