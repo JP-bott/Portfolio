@@ -10,6 +10,7 @@ import DotGridShader from "@/components/DotGridShader"
 import ProjectCard from "@/components/project-card"
 import AnimatedHeading from "@/components/animated-heading"
 import RevealOnView from "@/components/reveal-on-view"
+import SkillsCarousel from "@/components/skills-carousel"
 export default function Page() {
   const projects = [
     {
@@ -111,8 +112,8 @@ export default function Page() {
       <section className="px-4 pt-4 pb-16 lg:pb-4">
         <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-[420px_1fr]">
           {/* LEFT: sticky and full height, now split into two stacked containers */}
-          <aside className="lg:sticky lg:top-4 lg:h-[calc(100svh-3rem)]">
-            <div className="grid h-full min-h-0 grid-rows-[3fr_1fr] gap-4">
+          <aside className="lg:sticky lg:top-4 lg:h-[calc(100svh-3rem)] w-full lg:w-[420px] max-w-full overflow-hidden">
+            <div className="grid h-full min-h-0 grid-rows-[3fr_1fr] gap-4 w-full max-w-full">
               {/* Top hero card (3fr of the available space) */}
               <div className="min-h-0">
                 <RevealOnView
@@ -164,18 +165,14 @@ export default function Page() {
               </div>
 
               {/* Bottom container (1fr of the available space) */}
-              <div className="min-h-0">
+              <div className="min-h-0 w-full max-w-full overflow-hidden">
                 <RevealOnView
                   as="div"
-                  className="relative h-full min-h-0 overflow-hidden rounded-3xl border border-white/10 bg-neutral-900/60 p-6 sm:p-8"
+                  className="h-full w-full max-w-full flex flex-col justify-center"
                 >
-                  <div className="h-full flex flex-col justify-center">
-                    <h2 className="text-sm font-semibold tracking-widest text-white/50 mb-2">
-                      Additional
-                    </h2>
-                    <p className="text-white/80 text-base">
-                      Place another container here (e.g., skills, about, or links).
-                    </p>
+                  {/* Skills carousel with fixed width */}
+                  <div className="w-full max-w-full overflow-hidden">
+                    <SkillsCarousel />
                   </div>
                 </RevealOnView>
               </div>
