@@ -33,6 +33,16 @@ export default function Page() {
       gradientFrom: "#111827",
       gradientTo: "#ec1d1dff",
     },
+        {
+      title: "AI TECH",
+      subtitle: "Static website hosted on AWS S3",
+      imageSrc: "images/aitech.png",
+      tags: ["AWS S3", "Website", "HTML/CSS"],
+      href: "http://aitech-website.s3-website-ap-southeast-2.amazonaws.com/",
+      priority: false,
+      gradientFrom: "#021124",
+      gradientTo: "#00c2ff",
+    },
     {
       title: "AWS Exam Reviewer",
       subtitle: "Practice questions & flashcards",
@@ -62,7 +72,7 @@ export default function Page() {
       priority: false,
       gradientFrom: "#021124",
       gradientTo: "#06b6d4",
-    },
+    }
   ]
 
   return (
